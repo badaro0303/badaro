@@ -37,7 +37,7 @@
                     <ul class="big_menu">
                         <li>회원 관리 <i class="arrow fas fa-angle-right"></i></li>
                         <ul class="small_menu">
-                            <a href="/badaro/admin/member_list"><li>회원목록</li></a>
+                            <a href="/badaro/admin/memberlist"><li>회원목록</li></a>
                             <a href=""><li>소메뉴1-2</li></a>
                         </ul>
                     </ul>
@@ -67,16 +67,18 @@
         <table border="1" width="900px" height="70px">
             <tr>
                 <th>아이디</th>
+                <th>비밀번호</th>
                 <th>이름</th>
                 <th>생년월일</th>
                 <th>전화번호</th>
             </tr>
-            <c:forEach var="member_list" items="${list}">
+            <c:forEach var="memberlist" items="${list}">
 	            <tr>
-	                <td>아이디 불러오기</td>
-	                <td>이름 불러오기</td> 
-	                <td>생년월일 불러오기</td>
-	                <td>전화번호 불러오기</td>
+	                <td>${memberlist.id}</td>
+	                <td>${memberlist.password}</td>
+	                <td>${memberlist.name}</td> 
+	                <td>${memberlist.birth}</td>
+	                <td>${memberlist.phone}</td>
 	            </tr>
             </c:forEach>
         </table>
