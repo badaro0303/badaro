@@ -9,14 +9,32 @@
 			select * from bdr_post 
 		]]>
 	</select>
+		<select id="getListWithPaging" resultType="org.zerock.domain.BoardVO">
+			select *
+			from (
+					select @rownum:=@rownum+1 as rownum,b.*
+			        from (
+						select @rownum:=0
+					) as tmp,bdr_post as b
+					order by p_turn desc
+			) as boardList
+			<![CDATA[
+			where rownum>(#{pageNum} - 1)*#{amount} and rownum<=#{pageNum} *#{amount}
+			]]>
+		</select>
+		
+	<select id="getTotalCount" resultType="int">
+		select count(*) from bdr_post
+	</select>
+
 	
 	<select id="read" resultType="org.zerock.domain.BoardVO">
 		select * from bdr_post where p_turn = #{p_turn}
 	</select>
 	
 	<insert id="insert">  
-		insert into bdr_post (p_title, p_rating, p_content)
-		values(#{p_title}, #{p_rating}, #{p_content})
+		insert into bdr_post (p_title, p_rating, p_content, p_user)
+		values(#{p_title}, #{p_rating}, #{p_content}, #{p_user})
 	</insert>
 	
 	<insert id="insertSelectKey">
@@ -26,8 +44,8 @@
 			
 		</selectKey>
 		
-		insert into bdr_post (p_title, p_rating, p_content)
-		values(#{p_title}, #{p_rating}, #{p_content})
+		insert into bdr_post (p_title, p_rating, p_content, p_user)
+		values(#{p_title}, #{p_rating}, #{p_content}, #{p_user})
 	</insert>
 	
 	<delete id="delete" >	
@@ -41,5 +59,12 @@
 		p_date = now()
 		where p_turn = #{p_turn}
 	</update>
+	
+	<update id="updateCount">
+		update bdr_post
+		set p_count = p_count+1
+		where p_turn = #{p_turn}
+	</update>
+	
 	
 </mapper>

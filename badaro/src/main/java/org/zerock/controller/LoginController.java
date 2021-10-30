@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.context.annotation.SessionScope;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.zerock.domain.MemberVO;
@@ -38,8 +39,8 @@ public class LoginController {
 	public String memberLogin(MemberVO memberVO, HttpServletRequest req, RedirectAttributes rttr) throws Exception {
 		
         HttpSession session = req.getSession();
-        MemberVO member = memberervice.memberLogin(memberVO);
         
+        MemberVO member = memberervice.memberLogin(memberVO);
         if(member == null) {
             session.setAttribute("member", null);
             rttr.addFlashAttribute("msg", false);

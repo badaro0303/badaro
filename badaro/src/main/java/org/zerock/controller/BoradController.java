@@ -1,6 +1,9 @@
 package org.zerock.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -8,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.zerock.domain.BoardVO;
+import org.zerock.domain.Criteria;
+import org.zerock.domain.PageDTO;
 import org.zerock.service.BoardService;
 
 import lombok.AllArgsConstructor;
@@ -23,9 +28,12 @@ public class BoradController {
 	private BoardService service;
 	
 	@GetMapping("boardList")
-	public void boardList(Model model) {
+	public void boardList(Model model, Criteria cri)  {
 		log.info("boardList");
-		model.addAttribute("list",service.getList());
+
+		model.addAttribute("list", service.getList(cri));
+		int total=service.getTotalCount(cri);
+		model.addAttribute("pageMaker", new PageDTO(cri,total));
 	}
 	
 	@GetMapping("register")
@@ -35,19 +43,21 @@ public class BoradController {
 	}
 	
 	@PostMapping("register")
-	public String registerpost(BoardVO board, RedirectAttributes rttr) {
-		log.info("insert ÇÏ±âÀü " + board);
+	public String registerpost(BoardVO board,RedirectAttributes rttr) {
+		log.info("insert ï¿½Ï±ï¿½ï¿½ï¿½ " + board);
 		service.register(board);
 		rttr.addAttribute("p_turn", board.getP_turn());
 		return "redirect:/badaro/board/boardList";
 	}
 	
+	@Transactional
 	@GetMapping("read")
 	public void read(long p_turn,Model model) {
 		log.info("read="+ p_turn);
+		model.addAttribute("p_count", service.updateCount(p_turn));
 		model.addAttribute("read",service.get(p_turn));
 	}
-	
+	 
 	@GetMapping("modify")
 	public void modifyGet(long p_turn,Model model){
 		log.info("modify");

@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Service;
 import org.zerock.domain.BoardVO;
+import org.zerock.domain.Criteria;
 import org.zerock.mapper.BoardMapper;
 
 import lombok.AllArgsConstructor;
@@ -27,7 +28,7 @@ public void register(BoardVO board) {
 }
 
 @Override
-public BoardVO get(Long p_turn) {
+public BoardVO get(long p_turn) {
 	log.info("get....." + p_turn);
 	
 	return mapper.read(p_turn);
@@ -42,17 +43,28 @@ public boolean modify(BoardVO board) {
 }
 
 @Override
-public boolean remove(Long p_turn) {
+public boolean remove(long p_turn) {
 	log.info("remove....." + p_turn);
 	
 	return mapper.delete(p_turn)==1;
 }
 
 @Override
-public List<BoardVO> getList() {
+public List<BoardVO> getList(Criteria cri) {
 	log.info("getList.....");
 	
-	return mapper.getList();
+	return mapper.getListWithPaging(cri);
+}
+
+@Override
+public int getTotalCount(Criteria cri) {
+	return mapper.getTotalCount(cri);
+}
+
+@Override
+public int updateCount(long p_turn) {
+
+	return mapper.updateCount(p_turn);
 }
 
 

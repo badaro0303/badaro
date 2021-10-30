@@ -63,26 +63,7 @@
         </header>
 
         <div id="container">
-            <h2>관리자 정보</h2>
-            <from action="" name="" method="">
-                <table  id="detail" border="1">
-                    <tr>
-                        <td>아이디</td>
-                        <td>아이디 받아오기</td>
-                    </tr>
-                    <tr>
-                        <td>이름</td>
-                        <td>이름 받아오기</td>
-                    </tr>
-                    <tr>
-                        <td>생년월일</td>
-                        <td>생년월일 받아오기</td>
-                    </tr>
-                    <tr>
-                        <td>이메일</td>
-                        <td>이메일 받아오기</td>
-                    </tr>
-                </table>
+            <h2>관리자 페이지 입니다</h2>
             </from>
         </div><!--#container-->
     </div>

@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board/css2.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board/reset.css?after">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board/boardList.css?after">
+<link rel="stylesheet" type="text/css" href="/resources/css/board/boardList.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board/style_main.css?after1">
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/board/jquery-ui.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/board/jquery.min.js"></script>

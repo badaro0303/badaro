@@ -19,7 +19,7 @@
                             <th>해수욕장</th>
                             <th>제목</th>
                             <th>별점</th>
-                            <th>아이디</th>
+                            <th>이름</th>
                             <th>날짜</th>
                             <th>조회수</th>
                         </tr>
@@ -31,22 +31,26 @@
                             <td>${boardlist.p_beach}</td>
                             <td class="title"><a href="/badaro/board/read?p_turn=${boardlist.p_turn}">${boardlist.p_title}</a></td>
                             <td class="rating">★★★★★</td>
-                            <td>${member.id}</td>
+                            <td>${boardlist.p_user}</td>
                             <td>${boardlist.p_date}</td>
-                            <td>${boardlist.p_rating}</td>
+                            <td>${boardlist.p_count}</td>
                         </tr>
                        </c:forEach>
                     </tbody>
                 </table>
-                <div class="pager">
-                    <a href="#" class="bt">첫 페이지</a>
-                    <a href="#" class="bt">이전 페이지</a>
-                    <a href="#" class="num on">1</a>
-                    <a href="#" class="num">2</a>
-                    <a href="#" class="num">3</a>
-                    <a href="#" class="bt">다음 페이지</a>
-                    <a href="#" class="bt">마지막 페이지</a>
-                </div> 
+				<ul class="pagination">
+				<c:if test="${pageMaker.prev}">
+			    	<li class="paginate_button prev"><a href="/badaro/board/boardList?pageNum=${pageMaker.startPage-1}&amount=${pageMaker.cri.amount}&type=${pageMaker.cri.type}&keyword=${pageMaker.cri.keyword}">Previous</a></li>
+			    </c:if>
+			    <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+				    	<li class="paginate_button page-item ${pageMaker.cri.pageNum==num?'active':''}">
+				    		<a href="/badaro/board/boardList?pageNum=${num}&amount=${pageMaker.cri.amount}&type=${pageMaker.cri.type}&keyword=${pageMaker.cri.keyword}" class="page-link">${num}</a>
+				    	</li>
+			    </c:forEach>
+			     <c:if test="${pageMaker.next}">
+			    	<li class="paginate_button next"><a href="/badaro/board/boardList?pageNum=${pageMaker.endPage+1}&amount=${pageMaker.cri.amount}&type=${pageMaker.cri.type}&keyword=${pageMaker.cri.keyword}">Next</a></li>
+			    </c:if>
+			    </ul>
             </div> <!--#board_list_wrap_in-->
 		</div> <!--#board_list_wrap-->
 		</div>

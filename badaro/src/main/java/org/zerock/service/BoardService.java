@@ -3,20 +3,27 @@ package org.zerock.service;
 import java.util.List;
 
 import org.zerock.domain.BoardVO;
+import org.zerock.domain.Criteria;
 
-public interface BoardService { // ºñÁî´Ï½º ¿µ¿ª
-	// °Ô½ÃÆÇ ±Û¾²±â
+public interface BoardService { // ï¿½ï¿½ï¿½ï¿½Ï½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	// ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½Û¾ï¿½ï¿½ï¿½
 	public void register(BoardVO board);
 	
-	// °Ô½ÃÆÇ »ó¼¼ÆäÀÌÁö
-	public BoardVO get(Long p_turn);
+	// ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	public BoardVO get(long p_turn);
 	
-	// °Ô½ÃÆÇ ±Û¼öÁ¤
+	// ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½Û¼ï¿½ï¿½ï¿½
 	public boolean modify(BoardVO board);
 	
-	// °Ô½ÃÆÇ ±Û»èÁ¦
-	public boolean remove(Long p_turn);
+	// ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½Û»ï¿½ï¿½ï¿½
+	public boolean remove(long p_turn);
 	
-	// °Ô½ÃÆÇ ¸ñ·Ï¸®½ºÆ®
-	public List<BoardVO> getList();
+	// ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½Æ® í˜ì´ì§• ì²˜ë¦¬ ì•ˆëœê±°
+	//public List<BoardVO> getList();
+	
+	public List<BoardVO> getList(Criteria cri);
+	
+	public int getTotalCount(Criteria cri);
+	
+	public int updateCount(long p_turn);
 }

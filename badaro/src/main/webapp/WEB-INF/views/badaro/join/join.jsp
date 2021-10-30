@@ -8,16 +8,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/join/css2.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/join/jquery-ui.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/join/reset.css?after">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/join/style_join.css?after">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/join/reset.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/join/style_join.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/join/jquery-ui.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/join/jquery.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/join/member.js?after"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/join/member.js"></script>
 </head>
 <body>
 	<div id="wrap">
         <div class="join">
-            <h1 class="logo"><a href="/badaro/main">바다로</a></h1>
+            <h1 class="logo"><a href="/badaro/main/index">바다로</a></h1>
             <div class="provision">
                 개인정보보호법에 따라 바다로에 회원가입 신청하시는 분께 수집하는 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및 동의 거부 시 불이익에 관한 사항을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다.<br>
                 <br>

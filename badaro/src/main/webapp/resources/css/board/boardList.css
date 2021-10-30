@@ -74,38 +74,12 @@ caption{
     color: gold;
 }
 
-#board_list_wrap .pager{
-    margin-top: 20px;
-    text-align: center;
-    font-size: 0;
+ul.pagination {
+	display:flex;
+    justify-content: center;
 }
 
-#board_list_wrap .pager a{
-    display: inline-block;
-    margin-left: 10px;
-    padding: 5px 10px;
-    border: 1px solid #000;
-    border-radius: 100px;
-    font-size: 14px;
+.pagination li {
+	margin : 0 5px
 }
-
-#board_list_wrap .pager a:first-child{
-    margin-left: 0;
-}
-
-#board_list_wrap .pager a.bt{
-    border: 1px solid #eee;
-    background: #eee;
-    color: #444;
-}
-
-#board_list_wrap .pager a.num{
-    border: 1px solid rgb(172, 230, 255);
-    font-weight: 600;
-    color: rgb(172, 230, 255);
-}
-
-#board_list_wrap .pager a.num.on{
-    background: rgb(172, 230, 255);
-    color: #fff;
 }

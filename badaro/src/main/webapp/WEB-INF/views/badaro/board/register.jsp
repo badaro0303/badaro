@@ -39,9 +39,9 @@
                                 <label for="1stars" class="star">★</label>
                             </div>
                         </div>
-                        <div class="form-group" hidden>
-							   <label for="name">작성자</label>
-							   <input class="form-control" id="name" name="name" value="${member.id}" readonly>
+                        <div class="form-group">
+							   <label for="p_user">작성자</label>
+							   <input class="form-control" id="p_user" name="p_user">
 						</div>
                         
                     </div>    

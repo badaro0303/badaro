@@ -50,14 +50,15 @@
                     </div>
                     <div class="form-group" hidden>
 						<label for="name">작성자</label>
-						<input class="form-control" id="name" name="name" value="${member.id}" readonly>
+						<input class="form-control" id="p_user" name="p_user" value="${read.p_user}" readonly>
+						<label for="name">조회수</label>
+						<input class="form-control" id="p_count" name="p_count" value="${read.p_count}" readonly>
 					</div>
-                    <c:if test="${member.id eq member.id}">
-	                    <div class="r1btns">
-	                        <p class="change"><a href="/badaro/board/modify?p_turn=${read.p_turn}">수정</a></p>
-	                        <p class="delete"><a href="/badaro/board/remove?p_turn=${read.p_turn}">삭제</a></p>
-	                    </div>
-                    </c:if>
+	                <div class="r1btns">
+	                	<p class="change"><a href="/badaro/board/modify?p_turn=${read.p_turn}">수정</a></p>
+	                    <p class="delete"><a href="/badaro/board/remove?p_turn=${read.p_turn}">삭제</a></p>
+	               	</div>
+
 
                 </div> <!--.row2-->
     
