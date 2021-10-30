@@ -8,7 +8,7 @@ import org.zerock.domain.MemberVO;
 import org.zerock.mapper.MemberMapper;
 
 @Service
-public interface MemberService{
+public interface MemberService {
 	
 
 	// 회원가입
