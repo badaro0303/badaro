@@ -94,7 +94,8 @@ $(document).ready(function() {
 	
 	$('#pw').blur(function() { 
 		if (pwJ.test($('#pw').val())) { 
-			console.log('true'); $('#pw_check').text(''); 
+			console.log('true'); 
+			$('#pw_check').text(''); 
 			} else { 
 				console.log('false'); 
 				$('#pw_check').text('4~12자의 숫자 , 문자로만 사용 가능합니다.'); 

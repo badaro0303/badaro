@@ -48,7 +48,7 @@
                             </ul>
                         </ul>
                         <ul class="big_menu">
-                            <li><a href="../main/index.html">바다로 메인</a></li>
+                            <li><a href="/badaro/main/index">바다로 메인</a></li>
                         </ul>
                     </div>
                 </div>

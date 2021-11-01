@@ -1,7 +1,5 @@
 package org.zerock.controller;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -78,7 +76,5 @@ public class BoradController {
 		service.remove(p_turn);
 		return "redirect:/badaro/board/boardList";
 	}
-	
-
 	
 }

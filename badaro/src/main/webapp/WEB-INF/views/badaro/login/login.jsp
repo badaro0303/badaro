@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/login/css2.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/login/jquery-ui.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/login/reset.css?after">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/login/reset.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/login/style_login.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/login/jquery-ui.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/login/jquery.min.js"></script>
@@ -37,7 +37,7 @@
             </c:if>
             
             <c:if test="${member != null}">
-			<c:redirect url="/badaro/main/index"/>
+				<c:redirect url="/badaro/main/index"/>
 			</c:if>
 
 
